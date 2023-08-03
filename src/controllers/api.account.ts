@@ -13,7 +13,7 @@ export const signUp = async(request:express.Request, response:express.Response, 
     const emailRegex = new RegExp(/^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/, "gm")
     let validEmail:boolean = emailRegex.test(email)
     
-    if(validEmail = false){
+    if(!validEmail){
         return response.status(400).json({msg:'Invalid email'})
     }
     if(!username){
