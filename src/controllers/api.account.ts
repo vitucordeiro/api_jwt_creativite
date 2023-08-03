@@ -73,12 +73,5 @@ export const signIn = async(request:express.Request, response:express.Response, 
         {expiresIn:'1h'})
 
     response.setHeader('userid',userExist.id).status(200)
-        .json(
-            {success:true, 
-                data:{
-                    userId:userExist.id,
-                    token:token}
-                })
-   
 }
 
